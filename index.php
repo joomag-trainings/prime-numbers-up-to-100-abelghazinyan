@@ -7,15 +7,11 @@
  */
 echo "<ul><li>2</li>";
 for($j = 3; $j <= 100; $j++){
-    $isPrime = true;
-    for($i = 2; $i <= floor(sqrt($j)); $i++){
-        if($j % $i == 0){
-            $isPrime = false;
-            break;
+    for($i = 2; $i <= floor(sqrt($j)); $i++) {
+        if ($j % $i == 0) {
+            continue 2;
         }
     }
-    if($isPrime){
         echo "<li>{$j}</li>";
-    }
 }
 echo "</ul>";
